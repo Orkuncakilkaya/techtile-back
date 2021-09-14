@@ -15,7 +15,7 @@ export default async function ProductDetailHandler(req: Request, res: Response) 
     res.status(200).json({
         data: {
             product: product.toObject(),
-            user: user.toObject(),
+            user: {...user.toObject(), password: undefined},
             categories: categories.map(item => item.toObject()),
         },
     });
